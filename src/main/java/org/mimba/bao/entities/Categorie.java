@@ -13,21 +13,22 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Categorie implements Serializable{
-	@Id 
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+public class Categorie implements Serializable {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
-	@Size(min=3, max=30)
+	@Size(min = 3, max = 30)
 	private String nom;
 	@Lob
 	private byte[] photo;
-	@Size(min=3, max=50)
+	@Size(min = 3, max = 50)
 	private String nomPhoto;
-	@OneToMany(mappedBy="categorie")
+	@OneToMany(mappedBy = "categorie")
 	private Collection<Produit> produits;
-	@Size(min=5, max=50)
+	@Size(min = 5, max = 50)
 	private String description;
+
 	public Categorie() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -78,7 +79,4 @@ public class Categorie implements Serializable{
 		this.produits = produits;
 	}
 
-	
-
-	
 }

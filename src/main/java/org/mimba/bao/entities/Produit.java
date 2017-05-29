@@ -25,7 +25,7 @@ public class Produit implements Serializable{
 	@Size(min=5, max=50)
 	private String description;
 	@NotNull
-	private double pix;
+	private double prix;
 	@NotNull
 	private int quantite;
 	private boolean selectionner;
@@ -66,12 +66,12 @@ public class Produit implements Serializable{
 		this.description = description;
 	}
 
-	public double getPix() {
-		return pix;
+	public double getPrix() {
+		return prix;
 	}
 
-	public void setPix(double pix) {
-		this.pix = pix;
+	public void setPrix(double prix) {
+		this.prix = prix;
 	}
 
 	public int getQuantite() {
@@ -106,11 +106,11 @@ public class Produit implements Serializable{
 		this.categorie = categorie;
 	}
 
-	public Produit(String nom, String description, double pix, int quantite, boolean selectionner, String nomPhoto) {
+	public Produit(String nom, String description, double prix, int quantite, boolean selectionner, String nomPhoto) {
 		super();
 		this.nom = nom;
 		this.description = description;
-		this.pix = pix;
+		this.prix = prix;
 		this.quantite = quantite;
 		this.selectionner = selectionner;
 		this.nomPhoto = nomPhoto;

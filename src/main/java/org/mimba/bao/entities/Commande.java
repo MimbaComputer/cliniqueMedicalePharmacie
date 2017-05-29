@@ -13,12 +13,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Commande implements Serializable {
 	@Id  
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
+	@DateTimeFormat(pattern="yyyy-mm-dd-hh-nn")
 	private Date date;
 	@NotNull
 	@ManyToOne
