@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
@@ -29,8 +30,10 @@ public class Produit implements Serializable{
 	@NotNull
 	private int quantite;
 	private boolean selectionner;
-	@Size(min=3, max=30)
-	private String nomPhoto;
+	@Lob
+	private byte[] photo;
+//	@Size(min=3, max=30)
+//	private String nomPhoto;
 	@ManyToOne
 	@JoinColumn(name="idCategorie")
 	private Categorie categorie;
@@ -41,6 +44,17 @@ public class Produit implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+
+	public Produit(String nom, String description, double prix, int quantite, boolean selectionner) {
+		super();
+		this.nom = nom;
+		this.description = description;
+		this.prix = prix;
+		this.quantite = quantite;
+		this.selectionner = selectionner;
+	}
+
 
 	public Long getId() {
 		return id;
@@ -90,13 +104,7 @@ public class Produit implements Serializable{
 		this.selectionner = selectionner;
 	}
 
-	public String getNomPhoto() {
-		return nomPhoto;
-	}
 
-	public void setNomPhoto(String nomPhoto) {
-		this.nomPhoto = nomPhoto;
-	}
 
 	public Categorie getCategorie() {
 		return categorie;
@@ -106,14 +114,14 @@ public class Produit implements Serializable{
 		this.categorie = categorie;
 	}
 
-	public Produit(String nom, String description, double prix, int quantite, boolean selectionner, String nomPhoto) {
-		super();
-		this.nom = nom;
-		this.description = description;
-		this.prix = prix;
-		this.quantite = quantite;
-		this.selectionner = selectionner;
-		this.nomPhoto = nomPhoto;
+
+
+	public byte[] getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
 	}
 
 	public Collection<LigneCommande> getLigneCommandes() {

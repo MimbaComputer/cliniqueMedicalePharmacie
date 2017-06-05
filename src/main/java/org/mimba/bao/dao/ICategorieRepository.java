@@ -18,11 +18,6 @@ public interface ICategorieRepository extends JpaRepository<Categorie, Long> {
 
 	public Page<Categorie> findById(@Param("id") Long id, Pageable pageable);
 
-	@Query("select c from Categorie c where c.nomPhoto like:mc")
-	public Page<Categorie> categorieNomPhotoParMC(@Param("mc") String mc, Pageable pageable);
-
-	public Page<Categorie> findByNomPhoto(@Param("nomPhoto") String nomPhoto, Pageable pageable);
-
 	@Query("select c from Categorie c where c.description like:mc")
 	public Page<Categorie> categorieDescriptionParMC(@Param("mc") String mc, Pageable pageable);
 

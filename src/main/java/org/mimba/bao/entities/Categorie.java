@@ -22,8 +22,8 @@ public class Categorie implements Serializable {
 	private String nom;
 	@Lob
 	private byte[] photo;
-	@Size(min = 3, max = 50)
-	private String nomPhoto;
+//	@Size(min = 3, max = 50)
+//	private String nomPhoto;
 	@OneToMany(mappedBy = "categorie")
 	private Collection<Produit> produits;
 	@Size(min = 5, max = 50)
@@ -33,6 +33,7 @@ public class Categorie implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	public Categorie(String nom) {
 		super();
@@ -63,13 +64,6 @@ public class Categorie implements Serializable {
 		this.photo = photo;
 	}
 
-	public String getNomPhoto() {
-		return nomPhoto;
-	}
-
-	public void setNomPhoto(String nomPhoto) {
-		this.nomPhoto = nomPhoto;
-	}
 
 	public Collection<Produit> getProduits() {
 		return produits;
