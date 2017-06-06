@@ -21,7 +21,7 @@ public class Commande implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
-	@DateTimeFormat(pattern="yyyy-mm-dd-hh-nn")
+	@DateTimeFormat(pattern="yyyy-mm-dd hh:nn")
 	private Date date;
 	@NotNull
 	@ManyToOne
