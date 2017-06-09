@@ -35,6 +35,12 @@ public class Commande implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Commande(Date date, Client client) {
+		super();
+		this.date = date;
+		this.client = client;
+	}
+
 	public Long getId() {
 		return id;
 	}
